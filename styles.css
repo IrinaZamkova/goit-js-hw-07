@@ -1,0 +1,40 @@
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.item {
+    padding: 20px;
+}
+
+.item-img {
+    width: 250px;
+    height:167px;
+   
+}
+
+button[type="button"]{
+font-size: 14px;
+padding: 10px;
+margin: 10px ;
+
+}
+
+#value{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+#validation-input {
+    border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+    border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+    border-color: #f44336;
+  }
