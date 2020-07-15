@@ -13,5 +13,4 @@ function onBlur() {
 }
 function onFocus() {
   inputRef.classList.remove(`valid`, `invalid`);
-  event.target.value = "";
 }
