@@ -17,14 +17,10 @@ const images = [
 ];
 
 const galleryRef = document.querySelector(`#gallery`);
-const itemRef = images.map((image) => imgAttrCreate(image));
 
-function imgAttrCreate(image) {
-  const imgItem = galleryRef.insertAdjacentHTML(
-    "afterbegin",
-    '<li class="item"> <img class="item-img" /></li>',
-  );
-  const imgAttr = document.querySelector(`.item-img`);
-  imgAttr.src = image.url;
-  imgAttr.alt = image.alt;
-}
+const createImgItems = ({ url, alt }) =>
+  `<li><img class ="item-img"  src="${url}" alt="${alt}"></li>`;
+
+const galleryMaker = images.reduce((acc, img) => acc + createImgItems(img), "");
+
+galleryRef.insertAdjacentHTML("afterbegin", galleryMaker);

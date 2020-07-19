@@ -1,4 +1,3 @@
-
 const ingredients = [
   "Картошка",
   "Грибы",
@@ -10,8 +9,10 @@ const ingredients = [
 
 const itemListRef = document.querySelector(`#ingredients`);
 
-for (const ingredient of ingredients) {
+const item = ingredients.map((ingredient) => {
   const itemRef = document.createElement(`li`);
   itemRef.textContent = ingredient;
-  itemListRef.appendChild(itemRef);
-}
+  return itemRef;
+});
+
+itemListRef.append(...item);

@@ -4,13 +4,11 @@
     list-style: none;
 }
 
-.item {
-    padding: 20px;
-}
 
 .item-img {
     width: 250px;
     height:167px;
+    padding: 20px;
    
 }
 
