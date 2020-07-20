@@ -4,9 +4,12 @@ inputRef.addEventListener(`focus`, onFocus);
 inputRef.addEventListener(`blur`, onBlur);
 
 function onBlur() {
-  event.target.value.length == inputRef.getAttribute(`data-length`)? inputRef.classList.add(`valid`):inputRef.classList.add(`invalid`);
+  if (event.target.value.length == inputRef.getAttribute(`data-length`)) {
+    return inputRef.classList.add(`valid`);
   }
-  
+  return inputRef.classList.add(`invalid`);
+}
+
 function onFocus() {
   inputRef.classList.remove(`valid`, `invalid`);
 }
