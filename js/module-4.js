@@ -1,18 +1,29 @@
-
-const btnIncrRef = document.querySelector("[data-action=increment]");
+ const btnIncrRef = document.querySelector("[data-action=increment]");
 const btnDecRef = document.querySelector("[data-action=decrement]");
-
+const counterRef = document.querySelector(`#value`);
 let counterValue = 0;
 
-const counterRef = document.querySelector(`#value`);
+btnDecRef.addEventListener(`click`,counterClick);
+btnIncrRef.addEventListener(`click`, counterClick);
+ 
+function counterClick() {
+ counterRef.textContent =event.target.dataset.action === "increment" ? ++counterValue : --counterValue;
+}
 
-btnDecRef.addEventListener(`click`, () => {
-  counterRef.textContent = counterValue -= 1;
-});
+// const btnIncrRef = document.querySelector("[data-action=increment]");
+// const btnDecRef = document.querySelector("[data-action=decrement]");
 
-btnIncrRef.addEventListener(`click`, () => {
-  counterRef.textContent = counterValue += 1;
-});
+// let counterValue = 0;
+
+// const counterRef = document.querySelector(`#value`);
+
+// btnDecRef.addEventListener(`click`, () => {
+//   counterRef.textContent = counterValue -= 1;
+// });
+
+// btnIncrRef.addEventListener(`click`, () => {
+//   counterRef.textContent = counterValue += 1;
+// });
 
 // это вариант чтоб не использовать однообразную функцию посмотрите пожалуйста 
 
